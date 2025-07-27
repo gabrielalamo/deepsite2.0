@@ -1,39 +1,19 @@
 {
   "buildCommand": "npm run build",
-  "outputDirectory": "dist",
+  "outputDirectory": ".next",
   "framework": "nextjs",
   "functions": {
-    "api/**/*": {
-      "maxDuration": 300,
-      "memory": 3008,
-      "runtime": "nodejs20.x"
+    "pages/api/check-env.js": {
+      "maxDuration": 60
     },
-    "pages/api/**/*": {
-      "maxDuration": 300,
-      "memory": 3008
+    "pages/api/ask-ai.js": {
+      "maxDuration": 60
+    },
+    "pages/api/templates.js": {
+      "maxDuration": 60
+    },
+    "pages/api/optimize-prompt.js": {
+      "maxDuration": 60
     }
-  },
-  "env": {
-    "NODE_ENV": "production",
-    "VERCEL_TIMEOUT": "300",
-    "ENABLE_LONG_REQUESTS": "true"
-  },
-  "regions": [
-    "gru1"
-  ],
-  "headers": [
-    {
-      "source": "/api/(.*)",
-      "headers": [
-        {
-          "key": "X-Max-Duration",
-          "value": "300"
-        },
-        {
-          "key": "Cache-Control",
-          "value": "no-store"
-        }
-      ]
-    }
-  ]
+  }
 }
