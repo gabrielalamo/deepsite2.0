@@ -1,18 +1,7 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": ".next",
   "framework": "nextjs",
   "functions": {
-    "pages/api/check-env.js": {
-      "maxDuration": 60
-    },
-    "pages/api/ask-ai.js": {
-      "maxDuration": 60
-    },
-    "pages/api/templates.js": {
-      "maxDuration": 60
-    },
-    "pages/api/optimize-prompt.js": {
+    "pages/api/*.js": {
       "maxDuration": 60
     }
   }
